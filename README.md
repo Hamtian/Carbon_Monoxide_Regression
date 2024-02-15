@@ -92,7 +92,7 @@ As an example, we assessed the relationship between the newly created timestamp 
 
 While no direct correlation is evident, the scatter plot reveals a distinct seasonal pattern for carbon monoxide concentration, resembling cyclical waves. This suggests potential seasonality factors influencing carbon monoxide levels that warrant further investigation and may prove valuable for model improvement.
 
-### Data selection and splitting
+### Data selection
 
 While this model iteration did not directly employ feature selection techniques, there may be potential benefits in implementing it.
 
