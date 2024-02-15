@@ -2,16 +2,15 @@
 
 <img src="images/airpollution.png" alt="airpollution image" width="1000">
 
-## Introduction
+## Overview
 
-Rising carbon monoxide (CO) levels threaten Lechi's health and environment. Recognizing this urgency, this project leverages data science to predict CO concentrations and empower policymakers with actionable insights. By building a robust prediction model, we aim to inform effective measures towards cleaner air and a healthier city for all.
+The health department of Lechi has identified a troubling increase in pollution indicators, particularly in carbon monoxide (CO) levels. This rise poses significant threats to both public health and the environment. In response, our project aims to leverage data science to accurately predict CO concentrations, providing policymakers with actionable insights to address the issue effectively.
 
-### Project overview
+Our focus is on tackling the escalating CO pollution in Lechi through the development of a predictive model. By employing various data science techniques, we evaluated several regression models to determine the most effective approach. Notably, the selected model exhibits a strong R-squared value of 0.81, indicating its ability to discern the factors influencing CO levels.
 
-This project addresses the rising concern of CO pollution in Lechi by developing a robust prediction model. By applying data science techniques, including model selection and hyperparameter tuning, we evaluated various regression models (Random Forest, KNN, SVR, and linear models) to identify the most effective approach. The chosen model boasts a strong R-squared value of 0.81, indicating its ability to explain factors influencing CO levels.
+Armed with this predictive capability, decision-makers in Lechi can craft targeted strategies to mitigate CO emissions. By identifying the primary contributors to pollution, our model facilitates the implementation of impactful measures, thereby improving air quality and public health, particularly among vulnerable populations.
 
-This information empowers Lechi's decision-makers to craft targeted strategies for CO reduction. By pinpointing key contributors to pollution, the model helps implement effective measures, ultimately leading to cleaner air and improved public health, especially for vulnerable groups. Beyond Lechi, the model's adaptable principles offer broader potential for regional air quality management.
-
+Moreover, the adaptable nature of our model extends its utility beyond Lechi, offering broader opportunities for regional air quality management. Through collaboration and informed decision-making, we strive to create a healthier environment for all.
 
 ### Dataset description
 
