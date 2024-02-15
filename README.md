@@ -156,7 +156,7 @@ The accompanying histogram plot of carbon monoxide concentration reveals a left-
 
 This distribution imbalance might contribute to the observed pattern in the residual plot.
 
--	**Advantages at lower ranges:* With more training examples and potentially less variability in lower concentration ranges, the model achieves better performance, reflected by smaller residuals.
+-	**Advantages at lower ranges:** With more training examples and potentially less variability in lower concentration ranges, the model achieves better performance, reflected by smaller residuals.
 -	**Challenges at higher ranges:** As the number of observations with higher concentrations decreases, the model's performance deteriorates, indicated by larger residuals. This suggests the model might struggle to learn from fewer training examples and increased variability in this range.
 
 The observed patterns highlight the importance of considering the target variable's distribution and its potential impact on model performance. Further exploration and potentially tailored techniques to address the data imbalance, particularly for higher concentration ranges, could be valuable in enhancing the model's overall predictive accuracy.
