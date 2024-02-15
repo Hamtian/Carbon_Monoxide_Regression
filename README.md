@@ -24,14 +24,14 @@ The dataset contains 14,000 data points with 12 attributes, as shown in the foll
 
 This section outlines the data exploration and preprocessing steps undertaken to prepare the dataset for model building. These steps ensure data quality and suitability for accurate analysis and robust models.
 
-Key Tasks:
--	*Data Structure:* Verified data types, identified inconsistencies (e.g., date formatting), and addressed them.
--	*Missing Values:* Assessed missingness extent and distribution, employing appropriate imputation techniques.
--	*Data Visualization:* Explored data distributions and central tendencies with histograms, boxplots, etc.
--	*Categorical Encoding:* Transformed categorical variables (e.g., wind direction) into numerical representations.
--	*Feature Engineering:* Created informative features based on domain knowledge and data relationships.
--	*Feature Scaling:* Applied normalization or standardization techniques to ensure compatibility with modeling algorithms.
--	*Dimensionality Reduction:* Evaluated the need for dimensionality reduction using techniques like PCA.
+***Key Tasks:***
+-	**Data Structure:** Verified data types, identified inconsistencies (e.g., date formatting), and addressed them.
+-	**Missing Values:** Assessed missingness extent and distribution, employing appropriate imputation techniques.
+-	**Data Visualization:** Explored data distributions and central tendencies with histograms, boxplots, etc.
+-	**Categorical Encoding:** Transformed categorical variables (e.g., wind direction) into numerical representations.
+-	**Feature Engineering:** Created informative features based on domain knowledge and data relationships.
+-	**Feature Scaling:** Applied normalization or standardization techniques to ensure compatibility with modeling algorithms.
+-	**Dimensionality Reduction:** Evaluated the need for dimensionality reduction using techniques like PCA.
 
 These steps resulted in a clean, informative, and well-prepared dataset for subsequent analysis and model building.
 
@@ -39,10 +39,10 @@ These steps resulted in a clean, informative, and well-prepared dataset for subs
 
 The initial exploration identified missing values in 10 columns, affecting a total of 1% of the data. Analysis suggests these values are likely Missing at Random (MAR).
 
-Strategies:
+***Strategies:***
 
--	*Numerical Variables:* Missing values in numerical columns like temperature and pressure were imputed using the mean due to its simplicity and efficiency given the low missingness rate (1%). However, it's important to acknowledge potential limitations with non-normally distributed data.
--	*Categorical Variables:* Missing values in categorical variables like "Wind" were addressed using "No" under the assumption of absent wind activity. However, replacing missing values with the most frequent category could be another strategy to test.
+-	**Numerical Variables:** Missing values in numerical columns like temperature and pressure were imputed using the mean due to its simplicity and efficiency given the low missingness rate (1%). However, it's important to acknowledge potential limitations with non-normally distributed data.
+-	**Categorical Variables:** Missing values in categorical variables like "Wind" were addressed using "No" under the assumption of absent wind activity. However, replacing missing values with the most frequent category could be another strategy to test.
 
 Following imputation, all missing values were successfully addressed, resulting in a complete dataset for further analysis. While these approaches were deemed appropriate considering the data and context, alternative strategies might be suitable depending on future data quality issues and analysis goals.
 
@@ -50,23 +50,23 @@ Following imputation, all missing values were successfully addressed, resulting 
 
 Data exploration delved into visualizing the relationships between environmental variables and CO concentrations, aiming to inform feature selection and model development. Various visualization techniques provided key insights:
 
--	*Scatter plot analysis:* Revealed a positive trend between nitrogen dioxide (nitr_diox) and CO, suggesting its potential as a predictor variable, as shown below:
+-	**Scatter plot analysis:** Revealed a positive trend between nitrogen dioxide (nitr_diox) and CO, suggesting its potential as a predictor variable, as shown below:
 
 ![scatter plot](images/regplot.png)
 
--	*Bar plot:* Highlighted variations in mean CO concentration across different wind directions, indicating its possible influence on CO levels, as shown in the following plot:
+-	**Bar plot:** Highlighted variations in mean CO concentration across different wind directions, indicating its possible influence on CO levels, as shown in the following plot:
 
 ![bar plot](images/barplot.png)
 
--	*Heatmap visualization:* Identified strong positive correlations between CO and variables like small_part, med_part, sulf_diox, and nitr_diox, while trioxygen and temperature exhibited moderate negative correlations:
+-	**Heatmap visualization:** Identified strong positive correlations between CO and variables like small_part, med_part, sulf_diox, and nitr_diox, while trioxygen and temperature exhibited moderate negative correlations:
 
 ![heatmap](images/heatmap.png)
 
 The correlation matrix revealed high correlations among some predictor variables, potentially leading to multicollinearity, redundancy, and model complexity issues. To address this, the following strategies were implemented:
 
--	*Feature selection:* Employed techniques to identify and select the most relevant and informative variables for CO prediction.
--	*Dimensionality reduction:* Explored techniques like PCA to reduce feature space dimensionality while preserving key information.
--	*Regularization:* Utilized methods like ridge and lasso regression to automatically handle multicollinearity by penalizing large coefficients.
+-	**Feature selection:** Employed techniques to identify and select the most relevant and informative variables for CO prediction.
+-	**Dimensionality reduction:** Explored techniques like PCA to reduce feature space dimensionality while preserving key information.
+-	**Regularization:** Utilized methods like ridge and lasso regression to automatically handle multicollinearity by penalizing large coefficients.
 
 By proactively addressing these challenges, we aim to build a robust and interpretable predictive model for CO concentration forecasting.
 
@@ -74,15 +74,15 @@ By proactively addressing these challenges, we aim to build a robust and interpr
 
 This section describes the encoding of categorical variables for inclusion in our predictive model.
 
--	*Date:* The "date" variable was converted to DateTime format to address inconsistencies and missing entries. This ensures an accurate representation of temporal features.
--	*Wind:* One-hot encoding was performed. This approach creates dummy variables for each category, transforming them into numerical features suitable for model training.
+-	**Date:** The "date" variable was converted to DateTime format to address inconsistencies and missing entries. This ensures an accurate representation of temporal features.
+-	**Wind:** One-hot encoding was performed. This approach creates dummy variables for each category, transforming them into numerical features suitable for model training.
 
 ### Feature engineering
 
 Feature engineering played a crucial role in boosting the predictive power of our regression models. We focused on extracting meaningful insights from the "date" variable using various approaches:
 
--	*Temporal Decomposition:* Created features like year, month, day of week, and day of year to capture potential time-based patterns and seasonality.
--	*Timestamp Conversion:* Transformed the "date" variable into Unix timestamps, providing a numerical representation for smoother integration with regression models. This facilitated capturing temporal dependencies and seasonality, potentially improving model accuracy.
+-	**Temporal Decomposition:** Created features like year, month, day of week, and day of year to capture potential time-based patterns and seasonality.
+-	**Timestamp Conversion:** Transformed the "date" variable into Unix timestamps, providing a numerical representation for smoother integration with regression models. This facilitated capturing temporal dependencies and seasonality, potentially improving model accuracy.
 
 Redundancy and dimensionality were key considerations during feature engineering. We carefully crafted features that avoided replicating existing information to avoid overfitting and multicollinearity. Additionally, we evaluated the number of features to ensure efficient model training. This approach involved experimenting with various feature sets and meticulously assessing their impact on model performance using appropriate metrics. This ensured the chosen features provided the most relevant information without unnecessary bloat, ultimately contributing to a robust and efficient model.
 
@@ -99,9 +99,9 @@ While this model iteration did not directly employ feature selection techniques,
 Feature selection can often enhance model performance and interpretability by eliminating redundant or irrelevant information. In some cases, using a reduced feature subset can significantly improve accuracy and generalization.
 
 However, in the current context, including all available features yielded the best performance based on metrics like R-squared and MAE. This could be due to several factors, such as:
--	*Complementary relationships:* The full feature set likely contains crucial interactions or relationships that wouldn't be captured with a reduced subset.
--	*Limited data:* With a smaller dataset, eliminating features could potentially lead to information loss and hinder the model's learning ability.
--	*Model suitability:* The chosen model types might be less sensitive to redundancy and benefit from the additional information provided by all features.
+-	**Complementary relationships:** The full feature set likely contains crucial interactions or relationships that wouldn't be captured with a reduced subset.
+-	**Limited data:** With a smaller dataset, eliminating features could potentially lead to information loss and hinder the model's learning ability.
+-	**Model suitability:** The chosen model types might be less sensitive to redundancy and benefit from the additional information provided by all features.
 
 Exploring various approaches is crucial during model development. While feature selection wasn't ultimately employed in this specific case, the provided code can be used to utilize it when appropriate.
 
@@ -147,8 +147,8 @@ This section delves into the comprehensive process of training and evaluating mu
 
 ![residuals plot](images/residuals.png)
 
--	*Training residuals:* Evenly distributed around zero across the range of predicted values, indicating the model effectively learned the patterns within the training data.
--	*Testing residuals:* Gradually increase as predicted values get larger, suggesting the model encounters challenges in accurately predicting higher concentrations of carbon monoxide.
+-	**Training residuals:** Evenly distributed around zero across the range of predicted values, indicating the model effectively learned the patterns within the training data.
+-	**Testing residuals:** Gradually increase as predicted values get larger, suggesting the model encounters challenges in accurately predicting higher concentrations of carbon monoxide.
 
 The accompanying histogram plot of carbon monoxide concentration reveals a left-skewed distribution, implying a majority of data points concentrate toward lower values. 
 
@@ -156,8 +156,8 @@ The accompanying histogram plot of carbon monoxide concentration reveals a left-
 
 This distribution imbalance might contribute to the observed pattern in the residual plot.
 
--	*Advantages at lower ranges:* With more training examples and potentially less variability in lower concentration ranges, the model achieves better performance, reflected by smaller residuals.
--	*Challenges at higher ranges:* As the number of observations with higher concentrations decreases, the model's performance deteriorates, indicated by larger residuals. This suggests the model might struggle to learn from fewer training examples and increased variability in this range.
+-	**Advantages at lower ranges:* With more training examples and potentially less variability in lower concentration ranges, the model achieves better performance, reflected by smaller residuals.
+-	**Challenges at higher ranges:** As the number of observations with higher concentrations decreases, the model's performance deteriorates, indicated by larger residuals. This suggests the model might struggle to learn from fewer training examples and increased variability in this range.
 
 The observed patterns highlight the importance of considering the target variable's distribution and its potential impact on model performance. Further exploration and potentially tailored techniques to address the data imbalance, particularly for higher concentration ranges, could be valuable in enhancing the model's overall predictive accuracy.
 
@@ -181,8 +181,8 @@ However, a healthy dose of skepticism is essential. While achieving a laudable R
 
 Here are some key opportunities for future exploration:
 
--	*Regularization Techniques:* While exploring techniques like Ridge or Lasso regression to mitigate overfitting and enhance generalization performance didn't yield significant improvements in our case, further investigation into different hyperparameter settings or alternative regularization methods might prove fruitful.
--	*Feature Selection and Multicollinearity:* Our exploratory data analysis revealed the presence of multicollinearity within the dataset, indicating potential redundancy among predictor variables. Addressing this through feature selection techniques like forward selection or backward elimination could contribute to reducing model complexity and potentially improving generalizability.
+-	**Regularization Techniques:** While exploring techniques like Ridge or Lasso regression to mitigate overfitting and enhance generalization performance didn't yield significant improvements in our case, further investigation into different hyperparameter settings or alternative regularization methods might prove fruitful.
+-	**Feature Selection and Multicollinearity:** Our exploratory data analysis revealed the presence of multicollinearity within the dataset, indicating potential redundancy among predictor variables. Addressing this through feature selection techniques like forward selection or backward elimination could contribute to reducing model complexity and potentially improving generalizability.
 
 By diligently addressing these areas, we can strive to enhance the model's predictive capabilities and provide even more valuable insights for policymakers.
 
@@ -190,9 +190,9 @@ By diligently addressing these areas, we can strive to enhance the model's predi
 
 While our explorations have yielded valuable insights, further avenues beckon for researchers seeking to refine and enhance the model's predictive capabilities. Here are some potential considerations for future endeavors:
 
--	*Expanding the Feature Landscape:* Incorporating additional features or engineering new ones, particularly those related to weather patterns or atmospheric influences, could capture more nuanced relationships within the data, potentially leading to improved model performance.
--	*Exploring Algorithmic Frontiers:* Experimenting with different algorithms and model architectures, such as ensemble methods like XGBoost, might unlock further accuracy gains by handling complex interactions within the data more effectively.
--	*Embracing Continuous Validation:* As with any model development process, ongoing validation and iterative refinement are paramount. Implementing robust strategies like hold-out testing and actively seeking feedback from stakeholders during real-world deployments can ensure the model remains accurate, interpretable, and actionable in practice.
+-	**Expanding the Feature Landscape:** Incorporating additional features or engineering new ones, particularly those related to weather patterns or atmospheric influences, could capture more nuanced relationships within the data, potentially leading to improved model performance.
+-	**Exploring Algorithmic Frontiers:** Experimenting with different algorithms and model architectures, such as ensemble methods like XGBoost, might unlock further accuracy gains by handling complex interactions within the data more effectively.
+-	**Embracing Continuous Validation:** As with any model development process, ongoing validation and iterative refinement are paramount. Implementing robust strategies like hold-out testing and actively seeking feedback from stakeholders during real-world deployments can ensure the model remains accurate, interpretable, and actionable in practice.
 
 By diligently pursuing these potential avenues, future researchers can contribute to the development of increasingly accurate and reliable predictive models for environmental monitoring and public health initiatives, ultimately empowering policymakers with invaluable insights to combat rising CO levels and safeguard Lechi's air quality.
 
