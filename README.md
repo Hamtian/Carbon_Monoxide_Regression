@@ -18,7 +18,7 @@ This project utilizes a comprehensive dataset spanning 2014-2018, containing hou
 
 The dataset contains 14,000 data points with 12 attributes, as shown in the following table:
 
-![dataset](images/table.png "the table")
+![dataset](images/table.png)
 
 ## Data exploration and preprocessing
 
@@ -52,7 +52,7 @@ Data exploration delved into visualizing the relationships between environmental
 
 -	**Scatter plot analysis:** Revealed a positive trend between nitrogen dioxide (nitr_diox) and CO, suggesting its potential as a predictor variable, as shown below:
 
-![scatter plot](images/regplot.png)
+![scatter plot](images/regplot.png "TITLE")
 
 -	**Bar plot:** Highlighted variations in mean CO concentration across different wind directions, indicating its possible influence on CO levels, as shown in the following plot:
 
