@@ -52,7 +52,7 @@ Data exploration delved into visualizing the relationships between environmental
 
 -	**Scatter plot analysis:** Revealed a positive trend between nitrogen dioxide (nitr_diox) and CO, suggesting its potential as a predictor variable, as shown below:
 
-![scatter plot](images/regplot.png "TITLE")
+![scatter plot](images/regplot.png)
 
 -	**Bar plot:** Highlighted variations in mean CO concentration across different wind directions, indicating its possible influence on CO levels, as shown in the following plot:
 
