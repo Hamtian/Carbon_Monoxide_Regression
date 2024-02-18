@@ -18,7 +18,7 @@ This project utilizes a comprehensive dataset spanning 2014-2018, containing hou
 
 The dataset contains 14,000 data points with 12 attributes, as shown in the following table:
 
-![dataset](images/table.png)
+![dataset](images/table.png "the table")
 
 ## Data exploration and preprocessing
 
